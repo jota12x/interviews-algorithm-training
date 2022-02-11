@@ -1,4 +1,5 @@
-// Codility: lesson 4 (Rakuten)
+// Codility: lesson 4
+// Found on Rakuten coding interview - round 1
 // https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/
 
 #include <iostream>
