@@ -3,6 +3,8 @@
         "utility": "cpp",
         "vector": "cpp",
         "map": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "__hash_table": "cpp",
+        "unordered_map": "cpp"
     }
 }
