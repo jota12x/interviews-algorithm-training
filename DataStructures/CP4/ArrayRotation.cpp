@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 #include <cmath>
-#include <cstring>
 #include <utility>
 #include <iomanip>
 #include <map>
@@ -12,3 +11,7 @@ using namespace std;
 using ll = long long;
 using P = pair<int,int>;
 //#include <bits/stdc++.h>
+
+int main(){
+
+}
