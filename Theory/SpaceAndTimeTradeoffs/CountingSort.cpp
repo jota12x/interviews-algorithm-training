@@ -1,6 +1,7 @@
 // This program is based on CH 7.1 of [LEV2012].
 // The idea is to sort an array of elements by counting its constituents.
 // Keywords: input-enhancement
+// References: [LEV2012] [HALLIM 2021]
 
 #include <cstring>
 #include <iostream>
@@ -73,6 +74,35 @@ void betterCountingSort(int arr[], int N, int l, int u){
     }
      print(arr, N);
 }
+
+//Explanation is on [LEV2012], the cumulative distributions determine the last position of the element in the array.
+//Complexity:
+// O(N + K) comparisons, where K is the range of the values.
+// O(N) extra espace
+//NOTE: This algorithm is stable, for another explanation see [HALIM2021] page 60.
+void distributionCountingSort(int arr[], int N, int l, int u){
+    int freqDistrib[u-l+1]; // NOTE: we can reduce the size of the array by just taking the range of values and transforming the index. (0->l, u-> u-l)
+    int freq[u-l+1];
+    int sortedArr[N+1];
+
+    memset(freq, 0, sizeof(freq));
+    memset(freqDistrib, 0, sizeof(freqDistrib));
+
+    for(int i=0;i<N;i++){
+        freq[arr[i]-l]++;
+    }
+    for(int i=0;i<=u-l;i++){
+        if(i>0) freqDistrib[i] = freqDistrib[i-1] + freq[i];
+        else freqDistrib[i] = freq[i];
+    }
+    for(int i=N-1;i>=0;i--){
+        int freqIndex = arr[i]-l;
+        sortedArr[freqDistrib[freqIndex] - 1] = arr[i];
+        freqDistrib[freqIndex]--;
+    }
+    print(sortedArr, N);
+}
+
 int main(){
     int arr[] = {62,31,84,31,96,19,47};
     int N = sizeof(arr)/sizeof(arr[0]);
@@ -80,4 +110,6 @@ int main(){
     naiveCountingSort(arr, N);
     cout << "better-counting sort"<<endl;
     betterCountingSort(arr, N, 0, 100);
+    cout << "distribution counting sort"<<endl;
+    distributionCountingSort(arr, N, 19, 96);
 }
