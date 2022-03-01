@@ -14,3 +14,13 @@ void printVector(vector<int> arr, int N){
 	}
 	cout<<endl;
 }
+
+void printMatrix(int** matrix, int M, int N){
+    for(int i=0;i<M;i++){
+        for(int j=0;j<N;j++){
+            if(j<N-1) cout<<matrix[i][j]<<" ";
+            else cout<<matrix[i][j];
+        }
+        cout<<endl;
+    }
+}

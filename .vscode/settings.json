@@ -5,7 +5,14 @@
         "map": "cpp",
         "iostream": "cpp",
         "__hash_table": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "ostream": "cpp",
+        "type_traits": "cpp",
+        "iomanip": "cpp",
+        "__bit_reference": "cpp",
+        "algorithm": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
